@@ -1,0 +1,111 @@
+.forms_all{
+    padding: 0 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.forms_alls{
+    padding: 0 25%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+ padding-bottom: 100px;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.forms input{
+    width: 100%;
+    border: 2px solid #ddd;
+    height: 44px;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+.forms select{
+    width: 100%;
+    border: 2px solid #ddd;
+    height: 44px;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+
+.forms input:focus{
+    outline: none;
+}
+form{
+    width: 100%;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    background-image: url(../images/logo.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.forms button{
+    height: 44px;
+    background-color: #269a38;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.error_message{
+    background-color: rgba(255, 0, 0, 0.329);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+    padding-block: 10px;
+    color: red;
+    width: 100%;
+    margin-top: 25px;
+    border-radius: 5px;
+}
+
+.close_btn{
+    cursor: pointer;
+}
+
+.form{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    gap: 10px;
+}
+
+.form input{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    
+} 
+
+@media only screen and (max-width: 1110px) {
+    .forms_alls{
+        width: 100%;
+        padding-left:  5%;
+        padding-right: 5%;
+    }
+
+    .forms_all{
+        width: 100%;
+        padding-left:  5%;
+        padding-right: 5%;
+    }
+}
