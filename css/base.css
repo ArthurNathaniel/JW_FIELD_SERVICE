@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,18 +8,20 @@
 
 }
 
-body{
+body {
     font-family: "Inter", sans-serif;
 
 }
-.header_all{
+
+.header_all {
     border-bottom: 2px solid #ddd;
     padding: 0 5%;
     padding-block: 10px;
     text-align: center;
     color: #269a38;
 }
-.logo{
+
+.logo {
     width: 100px;
     height: 100px;
     margin-bottom: 20px;
@@ -27,36 +29,55 @@ body{
     background-position: center;
     background-size: cover;
 }
-.scrolls{
+
+.scrolls {
     height: 90vh;
     overflow-y: scroll;
 }
-.footer_all{
+
+.dashboard {
+    padding: 0 5%;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+.charts{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+.chart{
+    border: 2px solid;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer_all {
     position: fixed;
     display: flex;
     gap: 20px;
     width: 100%;
-  
+
     justify-content: space-between;
-margin-top: 30px;
-bottom: 0;
-padding: 0 5%;
-padding-block: 10px;
-background-color: #f2f3f6;
+    margin-top: 30px;
+    bottom: 0;
+    padding: 0 5%;
+    padding-block: 10px;
+    background-color: #f2f3f6;
 
 }
 
-.ft_icons a{
+.ft_icons a {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    text-decoration: none; 
+    text-decoration: none;
     color: #333d;
     font-size: 13px;
 }
 
 .ft_icons a.active {
-    color: #269a38; 
-    font-weight: bold; 
+    color: #269a38;
+    font-weight: bold;
 }
