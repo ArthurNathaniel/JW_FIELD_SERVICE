@@ -18,6 +18,7 @@ if (isset($_GET['group_leader_id'])) {
             echo "<p><strong>Phone:</strong> " . htmlspecialchars($row['phone_number']) . "</p>";
             echo "<p><strong>Email:</strong> " . htmlspecialchars($row['email']) . "</p>";
             echo "</div>";
+            echo "<hr>";
         }
     } else {
         echo "<p>No members found for this group leader.</p>";

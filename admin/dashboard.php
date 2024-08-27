@@ -226,9 +226,14 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         options: {
             responsive: true,
-            plugins: {
-                legend: {
-                    display: false
+            scales: {
+             
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Count'
+                    },
+                    beginAtZero: true
                 }
             }
         }
@@ -244,14 +249,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 backgroundColor: ['#ff6384']
             }]
         },
+        // options: {
+        //     responsive: true,
+        //     plugins: {
+        //         legend: {
+        //             display: false
+        //         }
+        //     }
+        // }
+
         options: {
             responsive: true,
-            plugins: {
-                legend: {
-                    display: false
+            scales: {
+               
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Count'
+                    },
+                    beginAtZero: true
                 }
             }
         }
+        
     });
 
     // Members Per Group Chart
@@ -265,7 +285,14 @@ document.addEventListener('DOMContentLoaded', function() {
             datasets: [{
                 label: 'Number of Members',
                 data: memberCounts,
-                backgroundColor: '#4bc0c0'
+                backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(75, 192, 192)',
+                                'rgb(153, 102, 255)',
+                                'rgb(255, 159, 64)'
+                            ],
             }]
         },
         options: {
@@ -347,11 +374,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 backgroundColor: ['#36a2eb', '#ff6384']
             }]
         },
+        // options: {
+        //     responsive: true,
+        //     plugins: {
+        //         legend: {
+        //             position: 'bottom'
+        //         }
+        //     }
+        // }
+
         options: {
             responsive: true,
-            plugins: {
-                legend: {
-                    position: 'bottom'
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Total Gender'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Count'
+                    },
+                    beginAtZero: true
                 }
             }
         }

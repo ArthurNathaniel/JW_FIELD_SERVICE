@@ -45,12 +45,17 @@ body {
     gap: 20px;
     grid-template-columns: 1fr 1fr;
 }
+
 .chart{
     border: 2px solid;
     height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.member_card{
+    padding-block: 20px;
 }
 .footer_all {
     position: fixed;
