@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
-
+    text-decoration: none;
 }
 
 body {
@@ -91,4 +91,40 @@ body {
 .ft_icons a.active {
     color: #269a38;
     font-weight: bold;
+}
+.login_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 5%;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+.login{
+    border: 2px solid #ddd;
+    padding: 0 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    text-align: center;
+    height: 180px;
+    background-color: #269a38;
+    color: #fff;
+
+}
+
+
+@media only screen and (max-width: 1110px) {
+   
+    .charts{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .login_grid {
+        display: grid;
+        grid-template-columns: 1fr ;
+        padding-block: 50px;
+     
+    }
 }

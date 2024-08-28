@@ -3,7 +3,7 @@ session_start();
 require_once 'db.php';
 
 if (!isset($_SESSION['member_id'])) {
-    header("Location: login_member.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -18,18 +18,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $materials = isset($_POST['materials']) ? implode(', ', $_POST['materials']) : '';
     $report_date = $_POST['report_date'];
 
-    $sql = "INSERT INTO field_reports (member_id, name, phone_number, house_number, materials, report_date) 
-            VALUES (?, ?, ?, ?, ?, ?)";
+    // Check for duplicates
+    $sql = "SELECT COUNT(*) FROM field_reports WHERE member_id = ? AND name = ? AND phone_number = ? AND house_number = ? AND materials = ? AND report_date = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("isssss", $_SESSION['member_id'], $name, $phone_number, $house_number, $materials, $report_date);
-
-    if ($stmt->execute()) {
-        $success = "Report added successfully!";
-    } else {
-        $error = "Failed to add report. Please try again.";
-    }
-
+    $stmt->execute();
+    $stmt->bind_result($count);
+    $stmt->fetch();
     $stmt->close();
+
+    if ($count > 0) {
+        $error = "Duplicate report found. This report has already been added.";
+    } else {
+        // Insert new report
+        $sql = "INSERT INTO field_reports (member_id, name, phone_number, house_number, materials, report_date) 
+                VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("isssss", $_SESSION['member_id'], $name, $phone_number, $house_number, $materials, $report_date);
+
+        if ($stmt->execute()) {
+            $success = "Report added successfully!";
+        } else {
+            $error = "Failed to add report. Please try again.";
+        }
+
+        $stmt->close();
+    }
 }
 
 $conn->close();

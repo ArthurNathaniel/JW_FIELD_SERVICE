@@ -10,7 +10,7 @@ if (!isset($_SESSION['group_leader_id'])) {
 
 // Fetch group leader's members
 $group_leader_id = $_SESSION['group_leader_id'];
-$sql = "SELECT name, gender, phone_number, email FROM members WHERE group_leader_id = ?";
+$sql = "SELECT id, name, gender, phone_number, email FROM members WHERE group_leader_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $group_leader_id);
 $stmt->execute();
@@ -40,6 +40,7 @@ $result = $stmt->get_result();
                 echo "<p><strong>Gender:</strong> " . htmlspecialchars($row['gender']) . "</p>";
                 echo "<p><strong>Phone:</strong> " . htmlspecialchars($row['phone_number']) . "</p>";
                 echo "<p><strong>Email:</strong> " . htmlspecialchars($row['email']) . "</p>";
+                echo "<a href='view_report.php?member_id=" . $row['id'] . "' class='btn'>View Report</a>";
                 echo "</div>";
             }
         } else {
@@ -53,5 +54,6 @@ $result = $stmt->get_result();
 </html>
 
 <?php
+$stmt->close();
 $conn->close();
 ?>
