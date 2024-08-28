@@ -128,7 +128,7 @@ $conn->close();
         <canvas id="totalGenderChart"></canvas>
     </div>
 </div>
-
+<div class="group_table">
     <h2>Group Leaders</h2>
     <table border="1" cellpadding="10" cellspacing="0">
         <thead>
@@ -154,6 +154,7 @@ $conn->close();
             ?>
         </tbody>
     </table>
+    </div>
 </div>
 
 <!-- Modal -->

@@ -52,10 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
            
              
-            <div class="error_message">
+          
     <?php if ($error) { echo "<p class='error'>$error</p>"; } ?>
-    <span class="close_btn"><i class="fas fa-times"></i></span> 
-    </div>
+   
     <form action="" method="POST">
         <div class="forms">
             <label for="email">Email</label>

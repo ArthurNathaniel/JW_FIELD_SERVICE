@@ -112,7 +112,14 @@ body {
     color: #fff;
 
 }
-
+.group_table{
+    margin-top: 40px;
+    text-transform: capitalize;
+}
+.group_table button{
+    background-color: transparent;
+    border: none;
+}
 
 @media only screen and (max-width: 1110px) {
    

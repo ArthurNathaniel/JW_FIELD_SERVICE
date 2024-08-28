@@ -65,7 +65,7 @@ $conn->close();
         <h2>Welcome, <?php echo htmlspecialchars($leader['name']); ?>!</h2>
         <p>You are the leader of <strong><?php echo htmlspecialchars($leader['group_name']); ?></strong>.</p>
         <p>Total Number of People in Your Group: <strong><?php echo $group_stats['total_members']; ?></strong></p>
-        <p>Total Number of People Reporting Materials: <strong><?php echo $material_stats['total_reporters']; ?></strong></p>
+        <!-- <p>Total Number of People Reporting Materials: <strong><?php echo $material_stats['total_reporters']; ?></strong></p> -->
         
         <div class="charts">
             <!-- Gender Distribution Chart -->
