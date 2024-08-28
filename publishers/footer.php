@@ -18,7 +18,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         </a>
     </div>
     <div class="ft_icons">
-    <a href="view_member.php" class="<?= ($current_page == 'view_member.php') ? 'active' : ''; ?>">
+    <a href="view_field_reports.php" class="<?= ($current_page == 'view_field_reports.php') ? 'active' : ''; ?>">
 
         <span><i class="fa-solid fa-users"></i></span>
         View Field Report

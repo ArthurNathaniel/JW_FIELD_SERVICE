@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["group_leader_id"])) {
-    header("location: login_group_leader.php");
+    header("location: login.php");
     exit();
 }
 
