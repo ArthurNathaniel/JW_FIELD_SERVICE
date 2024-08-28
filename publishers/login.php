@@ -49,7 +49,7 @@ $conn->close();
 <div class="forms_all">
     <div class="forms">
         <div class="logo"></div>
-        <h2>Pulisher Login</h2>
+        <h2>Publisher/ Member Login</h2>
     </div>
     
         <?php if ($error) { echo "<p class='error'>$error</p>"; } ?>

@@ -3,9 +3,10 @@ session_start();
 require_once 'db.php';
 
 if (!isset($_SESSION['member_id'])) {
-    header("Location: login_member.php");
+    header("Location: login.php");
     exit();
 }
+
 
 // Fetch member details from the database
 $member_id = $_SESSION['member_id'];
@@ -21,6 +22,7 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,35 +31,50 @@ $conn->close();
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
+
 <body>
-<?php include 'header.php'; ?>
+    <?php include 'header.php'; ?>
     <div class="dashboard-container">
         <h2>Welcome, <?php echo htmlspecialchars($member['name']); ?>!</h2>
-        <p>Here is your account information:</p>
-        <table class="member-info">
-            <tr>
-                <th>Name:</th>
-                <td><?php echo htmlspecialchars($member['name']); ?></td>
-            </tr>
-            <tr>
-                <th>Email:</th>
-                <td><?php echo htmlspecialchars($member['email']); ?></td>
-            </tr>
-            <tr>
-                <th>Gender:</th>
-                <td><?php echo htmlspecialchars($member['gender']); ?></td>
-            </tr>
-            <tr>
-                <th>Phone Number:</th>
-                <td><?php echo htmlspecialchars($member['phone_number']); ?></td>
-            </tr>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="../images/slide_1.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../images/slide_2.jpg" alt=""></div>
+            </div>
             
-        </table>
+        </div>
+        <div class="member-info">
+            <p><strong>Name:</strong> <?php echo htmlspecialchars($member['name']); ?></p>
+            <p><strong>Email:</strong> <?php echo htmlspecialchars($member['email']); ?></p>
+            <p><strong>Gender:</strong> <?php echo htmlspecialchars($member['gender']); ?></p>
+            <p><strong>Phone Number:</strong> <?php echo htmlspecialchars($member['phone_number']); ?></p>
+        </div>
         <div class="actions">
-            <a href="edit_profile.php" class="btn">Edit Profile</a>
-            <a href="logout.php" class="btn">Logout</a>
+            <a href="edit_profile.php" class="btns">Edit Profile</a>
+
         </div>
     </div>
-<?php include 'footer.php'; ?>
+
+    <?php include 'footer.php'; ?>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
 </body>
+
 </html>

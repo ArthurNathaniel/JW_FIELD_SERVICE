@@ -3,9 +3,10 @@ session_start();
 require_once 'db.php';
 
 if (!isset($_SESSION['member_id'])) {
-    header("Location: login_member.php");
+    header("Location: login.php");
     exit();
 }
+
 
 $member_id = $_SESSION['member_id'];
 $success = "";
