@@ -191,7 +191,10 @@ strong {
     height: 100%;
     object-fit: cover;
   }
-
+.title{
+    text-align: center;
+    margin-top: 40px;
+}
 
 @media only screen and (max-width: 1110px) {
 
